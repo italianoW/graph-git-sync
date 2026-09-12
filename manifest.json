@@ -1,0 +1,10 @@
+{
+  "id": "graph-github-sync",
+  "name": "Graph GitHub Sync",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Push an anonymized snapshot of your graph view (colors, nodes, connections only — no note names) to a GitHub repo, and embed it in your README.",
+  "author": "You",
+  "authorUrl": "",
+  "isDesktopOnly": true
+}

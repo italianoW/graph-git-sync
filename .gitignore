@@ -1,0 +1,17 @@
+# build output
+main.js
+*.js.map
+
+# dependencies
+node_modules/
+
+# local plugin data (contains your GitHub token!)
+data.json
+
+# OS/editor cruft
+.DS_Store
+.vscode/
+
+# npm/yarn logs
+npm-debug.log*
+yarn-error.log*

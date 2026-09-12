@@ -1,0 +1,17 @@
+{
+  "name": "graph-github-sync",
+  "version": "1.0.0",
+  "description": "Push an anonymized snapshot of your Obsidian graph to GitHub.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "node esbuild.config.mjs production"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.20.0",
+    "obsidian": "latest",
+    "typescript": "^5.4.0"
+  }
+}
