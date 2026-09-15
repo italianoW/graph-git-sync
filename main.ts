@@ -1133,9 +1133,8 @@ async function buildGraph(
 						contentCache
 					)
 				) {
-					color = `rgba(${(group.color.rgb >> 16) & 255}, ${
-						(group.color.rgb >> 8) & 255
-					}, ${group.color.rgb & 255}, ${group.color.a})`;
+					color = `rgba(${(group.color.rgb >> 16) & 255}, ${(group.color.rgb >> 8) & 255
+						}, ${group.color.rgb & 255}, ${group.color.a})`;
 					matchedCount++;
 					break;
 				}
@@ -1550,7 +1549,7 @@ class GraphGithubSyncSettingTab extends PluginSettingTab {
 		containerEl.empty();
 		const s = this.plugin.settings;
 
-		containerEl.createEl("h2", { text: "Graph GitHub Sync" });
+		new Setting(containerEl).setName("Graph GitHub Sync").setHeading();
 		containerEl.createEl("p", {
 			text:
 				"Publishes an anonymized snapshot of your graph (colors, node sizes, and connections only — no note names) to a GitHub repo.",
@@ -1728,7 +1727,7 @@ class GraphGithubSyncSettingTab extends PluginSettingTab {
 				})
 			);
 
-		containerEl.createEl("h3", { text: "Graph appearance" });
+		new Setting(containerEl).setName("Graph appearance").setHeading();
 
 		new Setting(containerEl)
 			.setName("Include orphan notes")
