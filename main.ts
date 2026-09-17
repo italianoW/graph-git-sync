@@ -1549,7 +1549,7 @@ class GraphGithubSyncSettingTab extends PluginSettingTab {
 		containerEl.empty();
 		const s = this.plugin.settings;
 
-		new Setting(containerEl).setName("Graph GitHub Sync").setHeading();
+		containerEl.createEl("h2", { text: "Graph GitHub Sync" });
 		containerEl.createEl("p", {
 			text:
 				"Publishes an anonymized snapshot of your graph (colors, node sizes, and connections only — no note names) to a GitHub repo.",
@@ -1577,6 +1577,12 @@ class GraphGithubSyncSettingTab extends PluginSettingTab {
 				return text;
 			})
 			.addExtraButton((btn) => {
+				// Not using ExtraButtonComponent.setTooltip() here: it was only
+				// added in Obsidian 1.1.0, newer than this plugin's declared
+				// minAppVersion (0.15.0). Obsidian's tooltip system reads the
+				// "aria-label" attribute directly, which extraSettingsEl has
+				// exposed since 0.9.7 — so we set it by hand instead, and it
+				// keeps working the same way on both old and new Obsidian.
 				btn.extraSettingsEl.setAttribute("aria-label", "Show token");
 				btn
 					.setIcon("eye")
@@ -1730,7 +1736,7 @@ class GraphGithubSyncSettingTab extends PluginSettingTab {
 				})
 			);
 
-		new Setting(containerEl).setName("Graph appearance").setHeading();
+		containerEl.createEl("h3", { text: "Graph appearance" });
 
 		new Setting(containerEl)
 			.setName("Include orphan notes")
