@@ -1577,9 +1577,9 @@ class GraphGithubSyncSettingTab extends PluginSettingTab {
 				return text;
 			})
 			.addExtraButton((btn) => {
+				btn.extraSettingsEl.setAttribute("aria-label", "Show token");
 				btn
 					.setIcon("eye")
-					.setTooltip("Show token")
 					.onClick(() => {
 						const input = btn.extraSettingsEl.parentElement?.querySelector(
 							"input"
@@ -1588,7 +1588,10 @@ class GraphGithubSyncSettingTab extends PluginSettingTab {
 						const showing = input.type === "text";
 						input.type = showing ? "password" : "text";
 						btn.setIcon(showing ? "eye" : "eye-off");
-						btn.setTooltip(showing ? "Show token" : "Hide token");
+						btn.extraSettingsEl.setAttribute(
+							"aria-label",
+							showing ? "Show token" : "Hide token"
+						);
 					});
 			});
 
